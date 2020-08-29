@@ -5,10 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { componetImports } from './app-routing.module'
 import { from } from 'rxjs';
+import { UserNameComponent } from './user-name/user-name.component';
+import { UsernameFormComponent } from './username-form/username-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserNameComponent,
+    UsernameFormComponent
   ],
   imports: [
     BrowserModule,

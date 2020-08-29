@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { componetImports } from './app-routing.module';
+import { GithubUserNameServiceService } from './githubUsername-service/github-user-name-service.service';
 
 
 @Component({
@@ -8,5 +8,11 @@ import { componetImports } from './app-routing.module';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- 
+ userName:any=[]
+ constructor(private githubUsernameService: GithubUserNameServiceService){
+
+ }
+ ngOnInIt(){
+   this.userName=this.githubUsernameService.getUserName();
+ }
 }
