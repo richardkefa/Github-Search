@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserDetailsClass } from "./githubUserDetails/user-details-class"
-import { GithubUserNameServiceService } from './githubUsername-service/github-user-name-service.service'
+import { UserDetailsClass } from './githubUserDetails/user-details-class';
+import { GithubUserNameServiceService } from './githubUsername-service/github-user-name-service.service';
 
 const routes: Routes = [];
 

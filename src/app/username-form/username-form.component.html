@@ -1,18 +1,13 @@
 <div class="row">
-  <div class="col-md-12">
-    <form>
+  <div class="col-md-10">
+    <form (ngSubmit)='submitUserName(username)' #username='ngForm'>
       <div class="form-group row">
         <label for="Enter username" class="col-sm-2 col-form-label">Github username</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="Enter username" placeholder="Enter username" name="Enter username">
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-sm-10 offset-sm-2">
-          <button type="submit" class="btn btn-primary">Serch</button>
+        <div class="form-inline">
+          <input class="form-control mr-sm-2 form-group" type="text" placeholder="Enter username" name="githubUserName" [(ngModel)]="newUserName.githubUserName" #githubUserName="ngModel" required>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </div>
       </div>
     </form>
-    
   </div>
 </div>

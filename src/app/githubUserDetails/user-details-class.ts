@@ -1,5 +1,6 @@
 export class UserDetailsClass {
   constructor(
-    public githubUserName,
+    public id:number,
+    public githubUserName:string,
   ){}
 }

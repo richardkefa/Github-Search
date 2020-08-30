@@ -1,8 +1,10 @@
 <div class="container-fluid">
-<div class="roe">
-  <div class="col-md-">
-    <div ngFor='let username of githubUsernameService'>
-      <p>Search for{{githubUsernameService.userName}}</p>
+<div class="row">
+  <div class="col-md-12">
+    <app-navbar></app-navbar>
+    <app-username-form></app-username-form>
+    <div *ngFor='let username of userName;'>
+      <p>Search for{{username.githubUserName}}</p>
     </div>
   </div>
 </div>

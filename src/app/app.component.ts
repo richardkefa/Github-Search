@@ -10,9 +10,9 @@ import { GithubUserNameServiceService } from './githubUsername-service/github-us
 export class AppComponent {
  userName:any=[]
  constructor(private githubUsernameService: GithubUserNameServiceService){
-
+  
  }
  ngOnInIt(){
-   this.userName=this.githubUsernameService.getUserName();
+  this.userName=this.githubUsernameService.getUserName(); 
  }
 }

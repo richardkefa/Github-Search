@@ -6,7 +6,7 @@ import { from } from 'rxjs';
   providedIn: 'root'
 })
 export class GithubUserNameServiceService {
-  userName: UserDetailsClass[]=[new UserDetailsClass("richardkefa")]
+  userName: UserDetailsClass[]=[new UserDetailsClass(1,"richardkefa")]
   getUserName(){
     return this.userName;
   }
