@@ -3,12 +3,51 @@
     <app-username-form></app-username-form>
   </div>
 </div>
+
+
 <div class="row">
   <div class="col-md-12">
-    {{githubInfo.user}}
-    <img src="{{githubInfo.avatar_url}}" alt="avater">
+    <!-- Card -->
+    <div class="card testimonial-card">
+
+      <!-- Background color -->
+      <div class="card-up indigo lighten-1"></div>
+      <div class="row">
+        <div class="col-md-5">
+          <!-- Avatar -->
+          <div class="avatar mx-auto ">
+            <img src="{{githubInfo.avatar_url}}" class="rounded-circle item-left" alt="avatar">
+          </div>
+        </div>
+        <div class="col-md-7">
+          <!-- Content -->
+          <div class="card-body">
+            <!-- Name -->
+            <h4 class="card-title">{{githubInfo.user}}</h4>
+            <hr>
+            <!-- Quotation -->
+            <p><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Card footer -->
+      <div class="rounded-bottom default-color lighten-3 text-center pt-3">
+        <ul class="list-unstyled list-inline font-small">
+          <li class="list-inline-item pr-2 white-text"><i class="far fa-clock pr-1"></i>05/10/2015</li>
+          <li class="list-inline-item pr-2">Followers</li>
+          <li class="list-inline-item pr-2">Following</li>
+          <li class="list-inline-item">Location</li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- Card -->
   </div>
 </div>
+
 <div class="row">
   <div class="col-md-12">
     <div *ngFor="let repo of repos">

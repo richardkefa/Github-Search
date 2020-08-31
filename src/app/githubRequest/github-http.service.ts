@@ -46,15 +46,15 @@ githubinfo:Gitrequestclass;
   }
   githubRepo(){
     interface ApiResponse{
-      name:any;
+      repos:any;
     }
     let token=environment.apiToken;
     // let apiUrl="https://api.github.com/users/"+this.username+"/repos";
     let repoUrl="https://api.github.com/users/richardkefa/repos"
     let promise= new Promise((resolve,reject)=>{
       this.http.get<ApiResponse>(repoUrl).toPromise().then(Response=>{
-        this.repos=Response.name;
-        console.log(Response.name);
+        this.repos=Response.repos;
+        console.log(Response.repos);
 
         resolve()
       },err=>{
