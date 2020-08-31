@@ -10,7 +10,7 @@ import { Gitrequestclass } from '../gitrequest/gitrequestclass'
 export class GithubHttpService {
 githubinfo:Gitrequestclass;
   constructor(private http:HttpClient) { 
-    this.githubinfo= new Gitrequestclass("","","","")
+    this.githubinfo= new Gitrequestclass("","","","",0,0,"",new Date(),"")
   }
   token=environment.apiToken;
   username="richardkefa"
@@ -21,6 +21,11 @@ githubinfo:Gitrequestclass;
       avatar_url:any;
       name:string;
       repos_url:any;
+      followers:number;
+      following:number;
+      location:any;
+      created_at:Date;
+      bio:any;
       
 
     }
@@ -29,6 +34,11 @@ githubinfo:Gitrequestclass;
       this.http.get<ApiResponse>(apiUrl).toPromise().then(Response=>{
         this.githubinfo.user=Response.login;
         this.githubinfo.avatar_url=Response.avatar_url;
+        this.githubinfo.followers=Response.followers;
+        this.githubinfo.following=Response.following;
+        this.githubinfo.location=Response.location;
+        this.githubinfo.bio=Response.bio;
+        this.githubinfo.created_at=Response.created_at;
         this.githubinfo.name=Response.name;
 
         console.log(Response.login);
@@ -64,5 +74,9 @@ githubinfo:Gitrequestclass;
       })
     })
     return promise
+  }
+
+  updateUserName(username){
+    this.username=username;
   }
 }

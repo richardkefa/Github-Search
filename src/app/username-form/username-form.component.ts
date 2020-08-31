@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserDetailsClass } from '../githubUserDetails/user-details-class'
 import { from } from 'rxjs';
+import { GithubHttpService } from '../githubRequest/github-http.service'
+
 
 @Component({
   selector: 'app-username-form',
@@ -9,13 +11,13 @@ import { from } from 'rxjs';
   styleUrls: ['./username-form.component.css']
 })
 export class UsernameFormComponent implements OnInit {
-  newUserName= new UserDetailsClass(0,"")
+  username:any;
   @Output() searchedUserName = new EventEmitter<UserDetailsClass>();
   submitUserName(form: NgForm){
-    this.searchedUserName.emit(this.newUserName)
+    this.searchedUserName.emit(this.username)
   }
 
-  constructor() { }
+  constructor(private githubhttpservice:GithubHttpService) { }
 
   ngOnInit(): void {
   }

@@ -16,8 +16,14 @@ export class GithubsearchComponent implements OnInit {
   user:any;
   githubInfo:any;
   repos:any;
+  username:any;
   constructor(private githubUsernameService: GithubUserNameServiceService,private router:Router,private http:HttpClient,private githubRequest:GithubHttpService){
    
+  }
+  search(){
+    this.githubRequest.updateUserName(this.username);
+    this.githubRequest.githubRepo();
+    this.repos=this.githubRequest.repos
   }
  
   ngOnInit():any{
