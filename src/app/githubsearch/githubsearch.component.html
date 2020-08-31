@@ -1,13 +1,28 @@
 <div class="row">
   <div class="col-md-12">
     <app-username-form></app-username-form>
-    <div *ngFor='let username of userName;'>
-      <p>Search for{{username.githubUserName}}</p>
-    </div>
   </div>
 </div>
-<div class="ror">
+<div class="row">
   <div class="col-md-12">
-    {{githubInfo.userName}}  {{githubInfo.repository}}
+    {{githubInfo.user}}
+    <img src="{{githubInfo.avatar_url}}" alt="avater">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div *ngFor="let repo of repos">
+      <div class="row">
+        <div class="col-md-9">
+          <h5><a href="{{repo.html_url}}"></a>{{repo.name}}</h5>
+          <p>{{repo.description}}</p>
+        </div>
+        <div class="col-md-3">
+          <label>{{repo.watchers}} Watchers</label>
+          <label>{{repo.forks}} Forks</label>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>

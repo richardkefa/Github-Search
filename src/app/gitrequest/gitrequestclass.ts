@@ -1,7 +1,10 @@
 export class Gitrequestclass {
   constructor(
-    public userName:string,
-    public repository:any,
+    public user:any,
+    public name:string,
+    public avatar_url:any,
+    public repo:any
+    
   ){
 
   }

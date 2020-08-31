@@ -13,17 +13,19 @@ import { Gitrequestclass } from '../gitrequest/gitrequestclass'
   styleUrls: ['./githubsearch.component.css']
 })
 export class GithubsearchComponent implements OnInit {
-  userName:any=[];
-  githubInfo:Gitrequestclass;
+  user:any;
+  githubInfo:any;
+  repos:any;
   constructor(private githubUsernameService: GithubUserNameServiceService,private router:Router,private http:HttpClient,private githubRequest:GithubHttpService){
    
   }
  
   ngOnInit():any{
-   this.userName=this.githubUsernameService.getUserName();
-   console.log(this.userName) 
+   this.user=this.githubUsernameService.getUserName();
    this.githubRequest.githubRequest()
    this.githubInfo=this.githubRequest.githubinfo
+   this.githubRequest.githubRepo();
+   this.repos=this.githubRequest.repos
   }
 
 }
