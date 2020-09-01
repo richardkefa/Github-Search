@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <app-username-form (searchedUserName)="search()"></app-username-form>
+    <app-username-form (searchedUserName)="search($event)"></app-username-form>
   </div>
 </div>
 
@@ -9,6 +9,15 @@
   <div class="col-md-12">
     <!-- Card -->
     <div class="card testimonial-card">
+            <!-- Card footer -->
+            <div class="rounded-bottom default-color lighten-3 text-right pt-3">
+              <ul class="list-unstyled list-inline font-small">
+                <li class="list-inline-item pr-2 white-text"><i class="far fa-clock pr-1"></i>{{githubInfo.created_at|date}}</li>
+                <li class="list-inline-item pr-2">Followers {{githubInfo.followers}}</li>
+                <li class="list-inline-item pr-2">Following {{githubInfo.following}}</li>
+                <li class="list-inline-item">Location {{githubInfo.location}}</li>
+              </ul>
+            </div>
 
       <!-- Background color -->
       <div class="card-up indigo lighten-1"></div>
@@ -16,14 +25,14 @@
         <div class="col-md-4">
           <!-- Avatar -->
           <div class="avatar mx-auto ">
-            <img src="{{githubInfo.avatar_url}}" class="rounded-circle pt-3 pb-3 pl-2" alt="avatar">
+            <img src="{{githubInfo.avatar_url}}" class="rounded-circle pt-3 pb-3 pl-2 img-fluid" alt="avatar">
           </div>
         </div>
         <div class="col-md-7">
           <!-- Content -->
           <div class="card-body">
             <!-- Name -->
-            <h4 class="card-title">{{githubInfo.user}}</h4>
+            <h4 class="card-title">{{githubInfo.login}}</h4>
             <hr>
             <!-- Quotation -->
             <ul class="list-unstyled">
@@ -33,24 +42,12 @@
           </div>
         </div>
       </div>
-
-
-      <!-- Card footer -->
-      <div class="rounded-bottom default-color lighten-3 text-center pt-3">
-        <ul class="list-unstyled list-inline font-small">
-          <li class="list-inline-item pr-2 white-text"><i class="far fa-clock pr-1"></i>{{githubInfo.created_at}}</li>
-          <li class="list-inline-item pr-2">Followers {{githubInfo.followers}}</li>
-          <li class="list-inline-item pr-2">Following {{githubInfo.following}}</li>
-          <li class="list-inline-item">Location {{githubInfo.location}}</li>
-        </ul>
-      </div>
-
     </div>
     <!-- Card -->
   </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-12">
     <div *ngFor="let repo of repos">
       <div class="row">
@@ -65,5 +62,35 @@
       </div>
 
     </div>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="col-md-12 ">
+<div class="repos">
+  <card class="text-left " *ngFor="let repo of repos">
+    <div class="row">
+      <div class="col-md-12 repoinfo">
+        <card-header class="pl-2"><h5><a href="{{repo.html_url}}"></a>{{repo.name}}</h5></card-header>
+        <card-body>
+          <card-text><p><strong>Description</strong><br>{{repo.description}}</p>
+          </card-text>
+          
+        </card-body>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 repoinfo">
+        <div class="default-color text-right footer pr-2" >
+          <span>
+            <label>Watchers {{repo.watchers}}</label>
+            <label>Forks {{repo.forks}} </label>
+          </span>
+          <a href="{{repo.html_url}}" class="white-text">view repository</a>
+        </div>
+      </div>
+    </div>
+  </card>
+</div>
   </div>
 </div>

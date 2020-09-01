@@ -12,9 +12,10 @@ import { GithubHttpService } from '../githubRequest/github-http.service'
 })
 export class UsernameFormComponent implements OnInit {
   username:any;
-  @Output() searchedUserName = new EventEmitter<UserDetailsClass>();
+  @Output() searchedUserName = new EventEmitter<any>();
   submitUserName(form: NgForm){
     this.searchedUserName.emit(this.username)
+    console.log(this.username)
   }
 
   constructor(private githubhttpservice:GithubHttpService) { }

@@ -13,7 +13,7 @@ githubinfo:Gitrequestclass;
     this.githubinfo= new Gitrequestclass("","","","",0,0,"",new Date(),"")
   }
   token=environment.apiToken;
-  username="richardkefa"
+  username="richardkefa";
   repos:any;
   githubRequest(){
     interface ApiResponse{
@@ -32,7 +32,7 @@ githubinfo:Gitrequestclass;
     let apiUrl="https://api.github.com/users/"+this.username;
     let promise= new Promise((resolve,reject)=>{
       this.http.get<ApiResponse>(apiUrl).toPromise().then(Response=>{
-        this.githubinfo.user=Response.login;
+        this.githubinfo.login=Response.login;
         this.githubinfo.avatar_url=Response.avatar_url;
         this.githubinfo.followers=Response.followers;
         this.githubinfo.following=Response.following;
@@ -47,36 +47,21 @@ githubinfo:Gitrequestclass;
 
         resolve()
       },err=>{
-        this.githubinfo.user="richardkefa"
+        this.githubinfo.login="richardkefa"
 
         reject(console.error("Error occured"))
       })
     })
     return promise
   }
-  githubRepo(){
-    interface ApiResponse{
-      repos:any;
-    }
+  githubRepo():Observable<any>{
     let token=environment.apiToken;
-    // let apiUrl="https://api.github.com/users/"+this.username+"/repos";
-    let repoUrl="https://api.github.com/users/richardkefa/repos"
-    let promise= new Promise((resolve,reject)=>{
-      this.http.get<ApiResponse>(repoUrl).toPromise().then(Response=>{
-        this.repos=Response.repos;
-        console.log(Response.repos);
+    return this.http.get("https://api.github.com/users/"+this.username+"/repos?"+token)
 
-        resolve()
-      },err=>{
-        this.githubinfo.user="richardkefa"
-
-        reject(console.error("Error occured"))
-      })
-    })
-    return promise
   }
 
   updateUserName(username){
     this.username=username;
+    console.log(username);
   }
 }
