@@ -1,27 +1,37 @@
-# GithubSearch
+# Quotes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+### This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+#### By **Richard kefa Mcharo**
 
-## Development server
+## Description 
+Ths is the Github Serch application it built to search for users in github.It will display the information of the user and all the repositories they have in there account.
+THe user can also visit the repository and see the code
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## User instructions 
+* Open the web page.
+* Enter username.
+* Choose repository.
+* View repo.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## How to collaborate
+* Fork repository
+* Create a pull request
+* clone to local repository
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Technologies Used
+The page was built using
+* Htnml
+* CSS
+* Angular
+* Bootstrap
+* mdbbootstrap
+## Support and contact details
+In case of any issue during collaboration please-
+* Email at richardkefa7@gmail.com
+## BDD
+### senario 1
+* GIVEN user is on the page
+* WHEN they type a username
+* AND Selects reposotory
+* THEN View repository
