@@ -6,6 +6,7 @@
 ## Description 
 Ths is the Github Serch application it built to search for users in github.It will display the information of the user and all the repositories they have in there account.
 THe user can also visit the repository and see the code
+https://richardkefa.github.io/Github-Search/
 
 ## User instructions 
 * Open the web page.

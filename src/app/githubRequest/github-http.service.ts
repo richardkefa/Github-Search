@@ -55,7 +55,7 @@ githubinfo:Gitrequestclass;
     return promise
   }
   githubRepo():Observable<any>{
-    let token=environment.apiToken;
+    let token=(environment as any).apiToken;
     return this.http.get("https://api.github.com/users/"+this.username+"/repos?"+token)
 
   }
