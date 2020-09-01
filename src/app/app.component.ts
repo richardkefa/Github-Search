@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GithubUserNameServiceService } from './githubUsername-service/github-user-name-service.service';
 import { Router } from '@angular/router';
 
 

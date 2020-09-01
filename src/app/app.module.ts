@@ -8,13 +8,12 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { from } from 'rxjs';
 import { UsernameFormComponent } from './username-form/username-form.component';
-import { GithubUserNameServiceService } from './githubUsername-service/github-user-name-service.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 import { GithubsearchComponent } from './githubsearch/githubsearch.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
-import { GithubinfoComponent } from './githubinfo/githubinfo.component';
-import { PostedAgoPipePipe } from './postedAgo/posted-ago-pipe.pipe'
+import { PostedAgoPipePipe } from './postedAgo/posted-ago-pipe.pipe';
+import { GithubHttpService } from './githubRequest/github-http.service'
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { PostedAgoPipePipe } from './postedAgo/posted-ago-pipe.pipe'
     AboutComponent,
     GithubsearchComponent,
     NotFoundPageComponent,
-    GithubinfoComponent,
     PostedAgoPipePipe,
     
   ],
@@ -35,7 +33,7 @@ import { PostedAgoPipePipe } from './postedAgo/posted-ago-pipe.pipe'
     HttpClientModule,
 
   ],
-  providers: [GithubUserNameServiceService],
+  providers: [GithubHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

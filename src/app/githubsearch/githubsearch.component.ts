@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { GithubUserNameServiceService } from '../githubUsername-service/github-user-name-service.service';
 import { Router } from '@angular/router';
 import { AppComponent } from '../app.component'
 import { HttpClient } from '@angular/common/http';
 import { GithubHttpService } from '../githubRequest/github-http.service'
-import { Gitrequestclass } from '../gitrequest/gitrequestclass'
 
 
 @Component({

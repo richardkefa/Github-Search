@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UserDetailsClass } from '../githubUserDetails/user-details-class'
 import { from } from 'rxjs';
 import { GithubHttpService } from '../githubRequest/github-http.service'
 
