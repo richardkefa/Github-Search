@@ -13,7 +13,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 import { GithubsearchComponent } from './githubsearch/githubsearch.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
-import { GithubinfoComponent } from './githubinfo/githubinfo.component'
+import { GithubinfoComponent } from './githubinfo/githubinfo.component';
+import { PostedAgoPipePipe } from './postedAgo/posted-ago-pipe.pipe'
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { GithubinfoComponent } from './githubinfo/githubinfo.component'
     GithubsearchComponent,
     NotFoundPageComponent,
     GithubinfoComponent,
+    PostedAgoPipePipe,
     
   ],
   imports: [
