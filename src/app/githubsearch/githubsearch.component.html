@@ -67,8 +67,8 @@
 
 <div class="row">
   <div class="col-md-12 ">
-<div class="repos">
-  <card class="text-left " *ngFor="let repo of repos">
+<div class="repos" *ngFor="let repo of repos">
+  <card class="text-left card" *ngFor="let repo of repos">
     <div class="row">
       <div class="col-md-12 repoinfo">
         <card-header class="pl-2"><h5><a href="{{repo.html_url}}"></a>{{repo.name}}</h5></card-header>
@@ -79,14 +79,18 @@
         </card-body>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12 repoinfo">
+    <div class="row ">
+      <div class="col-md-10">
         <div class="default-color text-right footer pr-2" >
           <span class="pr-4">
             <label class="pr-4">Watchers {{repo.watchers}} </label>
             <label>Forks {{repo.forks}} </label>
           </span>
-          <a href="{{repo.html_url}}" class="white-text">view repository</a>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="viewbtn">
+          <a href="{{repo.html_url}}" class="teal-text">view repository</a>
         </div>
       </div>
     </div>

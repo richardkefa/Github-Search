@@ -1,7 +1,13 @@
-.cards {
+.card {
   margin: 30px;
+  border: 1px solid teal;
+
 }
 .repoinfo{
   padding-left: 20px;
   padding-top: 20px;
+}
+.viewbtn{
+  border: teal 2px solid;
+  margin-left: -15px;
 }

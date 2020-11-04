@@ -1,5 +1,13 @@
 <div class="row">
+  <form (ngSubmit)='searchRepo(repoForm)' #repoForm='ngForm'>
+    <div class="form-group row">
+      <label for="Enter username" class="col-sm-2 col-form-label">Github Repository</label>
+      <div class="form-inline">
+        <input class="form-control mr-sm-2 form-group" type="text" placeholder="Enter username" name="githubRepoName" [(ngModel)]="reponame" (keyup)="searchRepo(reponame)">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </div>
+    </div>
+  </form>
   <div class="col-md-12">
-    <p>This application is for serching git hub users.<strong class="animated bounce slow infinite">Enjoy!</strong></p>
   </div>
 </div>

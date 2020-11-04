@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-md-10">
-    <form (ngSubmit)='submitUserName(goalForm)' #goalForm='ngForm'>
+    <form (ngSubmit)='submitUserName(usernameForm)' #usernameForm='ngForm'>
       <div class="form-group row">
-        <label for="Enter username" class="col-sm-2 col-form-label">Github username</label>
+        <label for="Enter username" class="col-sm-2 col-form-label label-inline"><span>Github username</span></label>
         <div class="form-inline">
-          <input class="form-control mr-sm-2 form-group" type="text" placeholder="Enter username" name="githubUserName" [(ngModel)]="username" (keyup)="submitUserName(goalForm)">
+          <input class="form-control mr-sm-2 form-group" type="text" placeholder="Enter username" name="githubUserName" [(ngModel)]="username" (keyup)="submitUserName(usernameForm)">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </div>
       </div>

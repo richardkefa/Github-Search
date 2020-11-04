@@ -14,7 +14,10 @@ githubinfo:Gitrequestclass;
   }
   token=environment.apiToken;
   username="richardkefa";
+  clientId="dfb5b0af5b91811b0e2f"
+  clientSecret="63c5170a741b91b6a456ca5ad1f200e0880833e4"
   repos:any;
+  repoName:any;
   githubRequest(){
     interface ApiResponse{
       login:any;
@@ -59,9 +62,20 @@ githubinfo:Gitrequestclass;
     return this.http.get("https://api.github.com/users/"+this.username+"/repos?"+token)
 
   }
+  githubRepoSerch():Observable<any>{
+    let token=(environment as any).apiToken;
+    return this.http.get("https://api.github.com/users/repository?q="+this.repoName, ({
+      headers: new HttpHeaders({Authorization:'token ${this.token}'})
+    }))
+
+  }
 
   updateUserName(username){
     this.username=username;
     console.log(username);
+  }
+  updateRepoName(reponame){
+    this.repoName=reponame;
+    console.log(reponame);
   }
 }

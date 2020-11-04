@@ -30,7 +30,7 @@ export class GithubsearchComponent implements OnInit {
     this.getRepository();
     console.log(username)
   }
- 
+
   ngOnInit():any{
    this.githubRequest.githubRequest()
    this.githubInfo=this.githubRequest.githubinfo;
